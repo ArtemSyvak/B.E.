@@ -1,28 +1,52 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+      <full-page ref="fullpage" :options="options" id="fullpage">
+        <div class="section">
+          First section ...
+        </div>
+        <div class="section">
+          Second section ...
+        </div>
+        <div class="section">
+          third section ...
+        </div>
+        <div class="section">
+          forth section ...
+        </div>
+        <div class="section">
+          fifth section ...
+        </div>
+        <div class="section">
+          six section ...
+        </div>
+      </full-page>
   </div>
 </template>
 
 <script>
-import HelloWorld from "./components/HelloWorld.vue";
-
 export default {
   name: "app",
-  components: {
-    HelloWorld
+  data: () => {
+    return true;
   }
 };
 </script>
 
 <style lang="scss">
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
 #app {
   font-family: "Avenir", Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
-  margin-top: 60px;
+}
+#fullpage {
+  background: url("./assets/background.svg") center center no-repeat;
+  background-size: cover;
 }
 </style>
