@@ -1,15 +1,29 @@
 <template>
   <div id="app">
+      <div class="position-absolute w-100 h-100 particles">
+          <vue-particles
+                  color="#f9ed37"
+                  :particlesNumber="120"
+                  :particleSize="2"
+                  linesColor="#dedede"
+                  :moveSpeed="4"
+                  :linesDistance="150"
+          >
+          </vue-particles>
+      </div>
       <full-page ref="fullpage" :options="options" id="fullpage">
           <!--Video Section-->
+
+
         <div class="section">
             <VideoPlayer/>
         </div>
         <div class="section">
-          Second section ...
+            <Services/>
         </div>
         <div class="section">
-          third section ...
+
+          <Portfolio/>
         </div>
         <div class="section">
           forth section ...
@@ -20,16 +34,22 @@
         <div class="section">
           six section ...
         </div>
+
       </full-page>
   </div>
 </template>
 
 <script>
 import VideoPlayer from "@/components/VideoPlayer";
+import Portfolio from "@/components/Portfolio";
+import Services from "@/components/Services";
+import particlesJS from "particles.js/particles";
 export default {
   name: "app",
   components: {
-    VideoPlayer
+    VideoPlayer,
+    Portfolio,
+    Services
   },
   data() {
     return {
@@ -47,6 +67,16 @@ export default {
         sectionsColor: ["#ffffff"]
       }
     };
+  },
+  mounted() {
+    this.loadParticles();
+  },
+  methods: {
+    loadParticles() {
+      particlesJS.load("particles-js", "assets/particles.json", function() {
+        // console.log("callback - particles.js config loaded");
+      });
+    }
   }
 };
 </script>
@@ -63,9 +93,16 @@ body {
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
+  background-color: black;
+  .particles {
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+  }
   #fullpage {
-    background: url("./assets/background.svg") center center no-repeat;
     background-size: cover;
+    background: url("./assets/background.svg") no-repeat 50% 170%;
   }
 }
 #fp-nav {
