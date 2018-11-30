@@ -32,8 +32,9 @@
           fifth section ...
         </div>
         <div class="section">
-          six section ...
+          <ContactUs/>
         </div>
+
 
       </full-page>
   </div>
@@ -43,13 +44,15 @@
 import VideoPlayer from "@/components/VideoPlayer";
 import Portfolio from "@/components/Portfolio";
 import Services from "@/components/Services";
+import ContactUs from "@/components/ContactUs";
 import particlesJS from "particles.js/particles";
 export default {
   name: "app",
   components: {
     VideoPlayer,
     Portfolio,
-    Services
+    Services,
+    ContactUs
   },
   data() {
     return {
@@ -102,7 +105,7 @@ body {
   }
   #fullpage {
     background-size: cover;
-    background: url("./assets/background.svg") no-repeat 50% 170%;
+    background: url("./assets/background.svg") no-repeat 50% 120%;
   }
 }
 #fp-nav {
